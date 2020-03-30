@@ -104,7 +104,7 @@ class LumenManager
     {
         $connections = $this->app['config']['elasticsearch.connections'];
 
-        if (is_null($config = array_get($connections, $name))) {
+        if (is_null($config = \Arr::get($connections, $name))) {
             throw new \InvalidArgumentException("Elasticsearch connection [$name] not configured.");
         }
 
